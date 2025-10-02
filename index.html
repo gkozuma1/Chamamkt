@@ -1,395 +1,515 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fire Marketing Digital - Performance & Resultados</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
-
-```
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Marketing Digital - Performance & Resultados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fire: {
+                            primary: '#FF5F00',
+                            secondary: '#FF8C00',
+                            dark: '#1A1A1A',
+                            light: '#F8F8F8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255,95,0,0.9) 0%, rgba(255,140,0,0.9) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #FF5F00;
+            transition: width .3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .stats-item {
+            position: relative;
+        }
+        
+        .stats-item::before {
+            content: '+';
+            position: absolute;
+            left: -15px;
+            top: 0;
+            color: #FF5F00;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body class="bg-fire-light text-fire-dark">
-<!-- Header/Navigation -->
-<header class="fixed w-full bg-white shadow-sm z-50">
-<div class="container mx-auto px-4 py-4">
-<div class="flex justify-between items-center">
-<div class="flex items-center">
-<a href="#" class="flex items-center text-xl font-bold text-fire-primary">
-<img src="[https://huggingface.co/spaces/firemkt/fire-project/resolve/main/images/chama 3.png](https://huggingface.co/spaces/firemkt/fire-project/resolve/main/images/chama%203.png)" alt="Fire Marketing Logo" class="h-8 mr-2">
-<span>Chama Marketing</span>
-</a>
-</div>
-
-```
-            <nav class="hidden md:flex space-x-8">
-                <a href="#services" class="nav-link font-medium">Serviços</a>
-                <a href="#about" class="nav-link font-medium">Sobre</a>
-                <a href="#results" class="nav-link font-medium">Resultados</a>
-                <a href="#contact" class="nav-link font-medium">Contato</a>
-            </nav>
-
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-fire-dark focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 py-4 border-t">
-            <div class="flex flex-col space-y-4">
-                <a href="#services" class="font-medium">Serviços</a>
-                <a href="#about" class="font-medium">Sobre</a>
-                <a href="#results" class="font-medium">Resultados</a>
-                <a href="#contact" class="font-medium">Contato</a>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Hero Section -->
-<section class="hero-gradient text-white pt-32 pb-20">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Seu negócio local no próximo nível</h1>
-                <p class="text-xl mb-8">Performance que transforma cliques em clientes. Estratégias digitais feitas para negócios reais.</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="bg-white text-fire-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300 text-center">Fale com a gente</a>
-                    <a href="#services" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:bg-opacity-10 transition duration-300 text-center">Nossos serviços</a>
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center text-xl font-bold text-fire-primary">
+                        <img src="https://huggingface.co/spaces/firemkt/fire-project/resolve/main/images/chama%203.png" alt="Fire Marketing Logo" class="h-8 mr-2">
+                        <span>Chama Marketing</span>
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#services" class="nav-link font-medium">Serviços</a>
+                    <a href="#about" class="nav-link font-medium">Sobre</a>
+                    <a href="#results" class="nav-link font-medium">Resultados</a>
+                    <a href="#contact" class="nav-link font-medium">Contato</a>
+                </nav>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-fire-dark focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <img src="<https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80>" alt="Marketing Digital" class="rounded-xl shadow-2xl max-w-full h-auto">
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="#services" class="font-medium">Serviços</a>
+                    <a href="#about" class="font-medium">Sobre</a>
+                    <a href="#results" class="font-medium">Resultados</a>
+                    <a href="#contact" class="font-medium">Contato</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- Stats Section -->
-<section class="bg-white py-12 shadow-sm">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="stats-item">
-                <h3 class="text-4xl font-bold text-fire-primary mb-2">+63</h3>
-                <p class="text-fire-dark">Clientes Atendidos</p>
-            </div>
-            <div class="stats-item">
-                <h3 class="text-4xl font-bold text-fire-primary mb-2">+800k</h3>
-                <p class="text-fire-dark">Investidos em Anúncios</p>
-            </div>
-            <div class="stats-item">
-                <h3 class="text-4xl font-bold text-fire-primary mb-2">5M</h3>
-                <p class="text-fire-dark">Faturamento Alcançado</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Services Section -->
-<section id="services" class="py-20 bg-fire-light">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">O que fazemos por você</h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Estratégias sob medida para alavancar seu negócio local com resultados mensuráveis.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Service 1 -->
-            <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                <div class="text-fire-primary mb-6">
-                    <i class="fas fa-bullseye text-4xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Tráfego Pago</h3>
-                <p class="text-gray-600">Anúncios de alta conversão no Meta e Google Ads, otimizados para trazer clientes qualificados.</p>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                <div class="text-fire-primary mb-6">
-                    <i class="fas fa-camera-retro text-4xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Conteúdo Criativo</h3>
-                <p class="text-gray-600">Conteúdo que vende e engaja, feito para destacar seu negócio nas redes sociais.</p>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                <div class="text-fire-primary mb-6">
-                    <i class="fas fa-funnel-dollar text-4xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Funil de Vendas</h3>
-                <p class="text-gray-600">Estratégias completas para converter visitantes em clientes e fidelizá-los.</p>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                <div class="text-fire-primary mb-6">
-                    <i class="fas fa-chart-line text-4xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Retenção</h3>
-                <p class="text-gray-600">Campanhas para recuperar clientes inativos e aumentar o ticket médio.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
-                <img src="<https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80>" alt="Equipe Fire Marketing" class="rounded-xl shadow-lg w-full">
-            </div>
-            <div class="lg:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Não somos apenas uma agência, somos seu parceiro estratégico</h2>
-                <p class="text-lg text-gray-600 mb-6">Na Fire Marketing Digital, entendemos os desafios reais dos negócios locais. Nossa abordagem combina análise de dados com criatividade para entregar resultados que fazem diferença no seu faturamento.</p>
-
-                <div class="space-y-4">
-                    <div class="flex items-start">
-                        <div class="text-fire-primary mr-4 mt-1">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Foco no seu mercado</h4>
-                            <p class="text-gray-600">Estratégias adaptadas à realidade do seu público local.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start">
-                        <div class="text-fire-primary mr-4 mt-1">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Transparência total</h4>
-                            <p class="text-gray-600">Relatórios claros e métricas que realmente importam.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start">
-                        <div class="text-fire-primary mr-4 mt-1">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Parceria de longo prazo</h4>
-                            <p class="text-gray-600">Crescemos juntos com seu negócio.</p>
-                        </div>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Seu negócio local no próximo nível</h1>
+                    <p class="text-xl mb-8">Performance que transforma cliques em clientes. Estratégias digitais feitas para negócios reais.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-white text-fire-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300 text-center">Fale com a gente</a>
+                        <a href="#services" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:bg-opacity-10 transition duration-300 text-center">Nossos serviços</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Results Section -->
-<section id="results" class="py-20 bg-fire-primary text-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Resultados que falam por si</h2>
-            <p class="text-xl max-w-2xl mx-auto">Casos reais de negócios locais que transformamos com estratégias digitais.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Case 1 -->
-            <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-fire-primary mr-4">
-                        <i class="fas fa-clinic-medical text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg">Clínica Odontológica</h3>
-                </div>
-                <p class="mb-4">Aumento de 320% nas consultas agendadas em 3 meses com campanhas segmentadas.</p>
-                <div class="flex justify-between text-sm">
-                    <span><i class="fas fa-arrow-up mr-1"></i> 320% mais consultas</span>
-                    <span><i class="fas fa-dollar-sign mr-1"></i> ROI 5.8x</span>
-                </div>
-            </div>
-
-            <!-- Case 2 -->
-            <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-fire-primary mr-4">
-                        <i class="fas fa-utensils text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg">Restaurante</h3>
-                </div>
-                <p class="mb-4">Dobramos a quantidade de seguidores e fidelização de clientes da base.</p>
-                <div class="flex justify-between text-sm">
-                    <span><i class="fas fa-users mr-1"></i> +45% clientes</span>
-                    <span><i class="fas fa-dollar-sign mr-1"></i> 2x ticket</span>
-                </div>
-            </div>
-
-            <!-- Case 3 -->
-            <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-fire-primary mr-4">
-                        <i class="fas fa-store text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg">Loja de Roupas</h3>
-                </div>
-                <p class="mb-4">Redução de 40% no custo por venda com otimização de anúncios e remarketing.</p>
-                <div class="flex justify-between text-sm">
-                    <span><i class="fas fa-money-bill-wave mr-1"></i> -40% CPA</span>
-                    <span><i class="fas fa-chart-line mr-1"></i> +25% conversão</span>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Marketing Digital" class="rounded-xl shadow-2xl max-w-full h-auto">
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CTA Section -->
-<section class="py-20 bg-fire-dark text-white">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar seu negócio?</h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto">Agende uma consultoria gratuita e descubra como podemos alavancar seus resultados.</p>
-        <a href="#contact" class="bg-fire-primary hover:bg-fire-secondary text-white font-bold py-4 px-12 rounded-full transition duration-300 inline-block">Quero crescer meu negócio</a>
-    </div>
-</section>
+    <!-- Stats Section -->
+    <section class="bg-white py-12 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="stats-item">
+                    <h3 class="text-4xl font-bold text-fire-primary mb-2">+63</h3>
+                    <p class="text-fire-dark">Clientes Atendidos</p>
+                </div>
+                <div class="stats-item">
+                    <h3 class="text-4xl font-bold text-fire-primary mb-2">+800k</h3>
+                    <p class="text-fire-dark">Investidos em Anúncios</p>
+                </div>
+                <div class="stats-item">
+                    <h3 class="text-4xl font-bold text-fire-primary mb-2">5M</h3>
+                    <p class="text-fire-dark">Faturamento Alcançado</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col lg:flex-row">
-            <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Vamos conversar</h2>
-                <p class="text-lg text-gray-600 mb-8">Preencha o formulário ou entre em contato diretamente pelos nossos canais.</p>
-
-                <div class="space-y-6">
-                    <div class="flex items-start">
-                        <div class="text-fire-primary mr-4 mt-1">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Email</h4>
-                            <p class="text-gray-600">firemktnegocios@gmail.com</p>
-                        </div>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-fire-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">O que fazemos por você</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Estratégias sob medida para alavancar seu negócio local com resultados mensuráveis.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-fire-primary mb-6">
+                        <i class="fas fa-bullseye text-4xl"></i>
                     </div>
-
-                    <div class="flex items-start">
-                        <div class="text-fire-primary mr-4 mt-1">
-                            <i class="fas fa-phone-alt text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Telefone</h4>
-                            <p class="text-gray-600">(86) 9 9982-3485</p>
-                        </div>
+                    <h3 class="text-xl font-bold mb-3">Tráfego Pago</h3>
+                    <p class="text-gray-600">Anúncios de alta conversão no Meta e Google Ads, otimizados para trazer clientes qualificados.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-fire-primary mb-6">
+                        <i class="fas fa-camera-retro text-4xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-3">Conteúdo Criativo</h3>
+                    <p class="text-gray-600">Conteúdo que vende e engaja, feito para destacar seu negócio nas redes sociais.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-fire-primary mb-6">
+                        <i class="fas fa-funnel-dollar text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Funil de Vendas</h3>
+                    <p class="text-gray-600">Estratégias completas para converter visitantes em clientes e fidelizá-los.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-fire-primary mb-6">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Retenção</h3>
+                    <p class="text-gray-600">Campanhas para recuperar clientes inativos e aumentar o ticket médio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="flex items-start">
-                        <div class="text-fire-primary mr-4 mt-1">
-                            <i class="fas fa-map-marker-alt text-xl"></i>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Equipe Fire Marketing" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Não somos apenas uma agência, somos seu parceiro estratégico</h2>
+                    <p class="text-lg text-gray-600 mb-6">Na Fire Marketing Digital, entendemos os desafios reais dos negócios locais. Nossa abordagem combina análise de dados com criatividade para entregar resultados que fazem diferença no seu faturamento.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-fire-primary mr-4 mt-1">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Foco no seu mercado</h4>
+                                <p class="text-gray-600">Estratégias adaptadas à realidade do seu público local.</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-bold">Endereço</h4>
-                            <p class="text-gray-600">Av. Dom Severino, 1440 - sala 104 - Fátima, Teresina - PI, 64049-370</p>
+                        
+                        <div class="flex items-start">
+                            <div class="text-fire-primary mr-4 mt-1">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Transparência total</h4>
+                                <p class="text-gray-600">Relatórios claros e métricas que realmente importam.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-fire-primary mr-4 mt-1">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Parceria de longo prazo</h4>
+                                <p class="text-gray-600">Crescemos juntos com seu negócio.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="lg:w-1/2">
-                <form id="contact-form" class="bg-fire-light p-8 rounded-xl shadow-md" method="POST">
-                    <div class="mb-6">
-                        <label for="name" class="block font-medium mb-2">Seu nome</label>
-                        <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent" required>
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="email" class="block font-medium mb-2">Seu email</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent" required>
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="phone" class="block font-medium mb-2">Seu telefone</label>
-                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent">
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="message" class="block font-medium mb-2">Como podemos ajudar?</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent" required></textarea>
-                    </div>
-
-                    <input type="hidden" name="_subject" value="Novo Lead - FIRE Marketing">
-                    <input type="hidden" name="_to" value="firemktnegocios@gmail.com">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_autoresponse" value="Obrigado pelo seu contato! Nossa equipe entrará em contato em breve.">
-                    <input type="hidden" name="_cc" value="firemktnegocios@gmail.com">
-                    <input type="hidden" name="_labels" value="LEADS INTERESSADOS">
-                    <div id="success-message" class="hidden text-center text-green-500 mb-4">
-                        Informações enviadas, entraremos em contato em breve
-                    </div>
-                    <button type="submit" class="w-full bg-fire-primary hover:bg-fire-secondary text-white font-bold py-4 px-6 rounded-full transition duration-300">Enviar mensagem</button>
-                </form>
-                <!-- Audio element for success sound (hidden) -->
-                <audio id="success-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" preload="auto"></audio>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- WhatsApp Button -->
-<a href="<https://wa.me/5586999823485>" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 z-50">
-    <i class="fab fa-whatsapp text-2xl"></i>
-</a>
-
-<!-- Footer -->
-<footer class="bg-fire-dark text-white py-12">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between">
-            <div class="mb-8 md:mb-0">
-                <a href="#" class="flex items-center text-2xl font-bold text-white mb-4 inline-block">
-                    <img src="<https://huggingface.co/spaces/firemkt/fire-project/resolve/main/images/chama%203.png>" alt="Fire Marketing Logo" class="h-10 mr-2">
-                    <span>Chama Marketing</span>
-                </a>
-                <p class="text-gray-400 max-w-xs">Performance que transforma cliques em clientes para negócios locais.</p>
+    <!-- Results Section -->
+    <section id="results" class="py-20 bg-fire-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Resultados que falam por si</h2>
+                <p class="text-xl max-w-2xl mx-auto">Casos reais de negócios locais que transformamos com estratégias digitais.</p>
             </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="font-bold text-lg mb-4">Serviços</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tráfego Pago</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Conteúdo Criativo</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Funil de Vendas</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Retenção</a></li>
-                    </ul>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-fire-primary mr-4">
+                            <i class="fas fa-clinic-medical text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Clínica Odontológica</h3>
+                    </div>
+                    <p class="mb-4">Aumento de 320% nas consultas agendadas em 3 meses com campanhas segmentadas.</p>
+                    <div class="flex justify-between text-sm">
+                        <span><i class="fas fa-arrow-up mr-1"></i> 320% mais consultas</span>
+                        <span><i class="fas fa-dollar-sign mr-1"></i> ROI 5.8x</span>
+                    </div>
                 </div>
-
-                <div>
-                    <h3 class="font-bold text-lg mb-4">Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Serviços</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a></li>
-                        <li><a href="#results" class="text-gray-400 hover:text-white transition">Resultados</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
-                    </ul>
+                
+                <!-- Case 2 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-fire-primary mr-4">
+                            <i class="fas fa-utensils text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Restaurante</h3>
+                    </div>
+                    <p class="mb-4">Dobramos a quantidade de seguidores e fidelização de clientes da base.</p>
+                    <div class="flex justify-between text-sm">
+                        <span><i class="fas fa-users mr-1"></i> +45% clientes</span>
+                        <span><i class="fas fa-dollar-sign mr-1"></i> 2x ticket</span>
+                    </div>
                 </div>
-
-                <div>
-                    <h3 class="font-bold text-lg mb-4">Redes Sociais</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-whatsapp"></i></a>
+                
+                <!-- Case 3 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-fire-primary mr-4">
+                            <i class="fas fa-store text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Loja de Roupas</h3>
+                    </div>
+                    <p class="mb-4">Redução de 40% no custo por venda com otimização de anúncios e remarketing.</p>
+                    <div class="flex justify-between text-sm">
+                        <span><i class="fas fa-money-bill-wave mr-1"></i> -40% CPA</span>
+                        <span><i class="fas fa-chart-line mr-1"></i> +25% conversão</span>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2023 Fire Marketing Digital. Todos os direitos reservados.</p>
+    <!-- CTA Section -->
+    <section class="py-20 bg-fire-dark text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar seu negócio?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Agende uma consultoria gratuita e descubra como podemos alavancar seus resultados.</p>
+            <a href="#contact" class="bg-fire-primary hover:bg-fire-secondary text-white font-bold py-4 px-12 rounded-full transition duration-300 inline-block">Quero crescer meu negócio</a>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script src="script.js"></script>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Vamos conversar</h2>
+                    <p class="text-lg text-gray-600 mb-8">Preencha o formulário ou entre em contato diretamente pelos nossos canais.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-fire-primary mr-4 mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-600">firemktnegocios@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-fire-primary mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Telefone</h4>
+                                <p class="text-gray-600">(86) 9 9982-3485</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-fire-primary mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Endereço</h4>
+                                <p class="text-gray-600">Av. Dom Severino, 1440 - sala 104 - Fátima, Teresina - PI, 64049-370</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="bg-fire-light p-8 rounded-xl shadow-md" method="POST">
+                        <div class="mb-6">
+                            <label for="name" class="block font-medium mb-2">Seu nome</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block font-medium mb-2">Seu email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block font-medium mb-2">Seu telefone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block font-medium mb-2">Como podemos ajudar?</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fire-primary focus:border-transparent" required></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="Novo Lead - FIRE Marketing">
+                        <input type="hidden" name="_to" value="firemktnegocios@gmail.com">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_autoresponse" value="Obrigado pelo seu contato! Nossa equipe entrará em contato em breve.">
+                        <input type="hidden" name="_cc" value="firemktnegocios@gmail.com">
+                        <input type="hidden" name="_labels" value="LEADS INTERESSADOS">
+                        <div id="success-message" class="hidden text-center text-green-500 mb-4">
+                            Informações enviadas, entraremos em contato em breve
+                        </div>
+                        <button type="submit" class="w-full bg-fire-primary hover:bg-fire-secondary text-white font-bold py-4 px-6 rounded-full transition duration-300">Enviar mensagem</button>
+                    </form>
+                    <!-- Audio element for success sound (hidden) -->
+                    <audio id="success-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" preload="auto"></audio>
+                    
+                    <script>
+                        document.getElementById('contact-form').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const form = e.target;
+                            const formData = new FormData(form);
+                            
+                            fetch('https://formsubmit.co/ajax/firemktnegocios@gmail.com', {
+                                method: 'POST',
+                                headers: {
+                                    'Accept': 'application/json'
+                                },
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                form.reset();
+                                document.getElementById('success-message').classList.remove('hidden');
+                                // Play success sound
+                                document.getElementById('success-sound').play();
+                                setTimeout(() => {
+                                    document.getElementById('success-message').classList.add('hidden');
+                                }, 5000);
+                            })
+                            .catch(error => console.error('Error:', error));
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
 
-```
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5586999823485" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
 
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="[https://enzostvs-deepsite.hf.space](https://enzostvs-deepsite.hf.space/)" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="[https://enzostvs-deepsite.hf.space?remix=firemkt/fire-project](https://enzostvs-deepsite.hf.space/?remix=firemkt/fire-project)" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+    <!-- Footer -->
+    <footer class="bg-fire-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="flex items-center text-2xl font-bold text-white mb-4 inline-block">
+                        <img src="https://huggingface.co/spaces/firemkt/fire-project/resolve/main/images/chama%203.png" alt="Fire Marketing Logo" class="h-10 mr-2">
+                        <span>Chama Marketing</span>
+                    </a>
+                    <p class="text-gray-400 max-w-xs">Performance que transforma cliques em clientes para negócios locais.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Serviços</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Tráfego Pago</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Conteúdo Criativo</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Funil de Vendas</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Retenção</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                            <li><a href="#results" class="text-gray-400 hover:text-white transition">Resultados</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Redes Sociais</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Fire Marketing Digital. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=firemkt/fire-project" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
